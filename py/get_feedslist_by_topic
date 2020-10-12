@@ -1,0 +1,26 @@
+#!/bin/bash
+
+
+# http://funny.bc.test.golemon123.com/feeds/getFeedListRecommendByTopicId?os=Android&m2=90c791b6e305ecdd41fb0c0170546902&v=1.2.0&md=PBFM00&channel=funny&sign=e45dfabd9193db3030d105dd4f948c69&mf=OPPO&tm=1570606325658&topic_id=278&network=wifi
+
+
+m=23
+# src=http://test.bc.golemon123.com
+ src=http://funny.bc.test.golemon123.com
+Path=feeds/getFeedListRecommendByTopicId
+m2=840984ac5b3afbffafdhasfhnafd90
+# channel=wegoo
+ channel=funny
+sign=8f271098b7c506a9d2ed5cdae268ff26
+network=wifi
+v=1.2.0
+tm=`expr \`date +%s%N\` / 1000000`
+topic_id=278
+
+link="$src/$Path?os=Android&m2=$m2&v=$v&md=PBFM00&channel=$channel&sign=$sign&mf=OPPO&tm=$tm&topic_id=$topic_id&network=$network"
+
+echo $link
+
+ curl --header "Content-Type:application/json" $link>feedlist.txt
+ echo `date` >>feedInfo_T.log
+ python3 get_feedslist.py >>feedInfo_T.log

@@ -1,0 +1,42 @@
+
+com.golemon.wegoo
+
+
+adb shell monkey -p com.golemon.wegoo -s 23  --throttle 2000 --ignore-crashes --ignore-timeouts -v -v -v 100000>Desktop\log.txt 2>&1 &
+
+/data/wwwlogs/log/get_feeds.log
+
+yuyanchao  yyC!@#123    39.105.58.145
+
+ 47.254.71.244 | 172.20.231.3 |  root eD97D468f171eec9a3D1084bbb1@31
+
+redis-cli -h  r-rj9ve25b125k1n2thy.redis.rds.aliyuncs.com -p 6379 -a glm_2099n
+redis-cli -h  r-rj961d57485b73d4.redis.rds.aliyuncs.com -p 6379 -a fafdababf13a0bfc6f977217703_c8
+redis-cli -h r-rj9jrvbxpx48372qh3.redis.rds.aliyuncs.com -p 6379 -a glm_2099n
+
+mongo dds-rj956bda68c672441.mongodb.rds.aliyuncs.com --port 3717
+mongo mongodb://golemon2:golemon2019@dds-rj956bda68c672441.mongodb.rds.aliyuncs.com:3717/golemon
+
+get new_m2_90c791b6e305ecdd41fb0c0170546902
+get m2_90c791b6e305ecdd41fb0c0170546902_is_new
+
+ssh -i 'im' root@47.244.159.170
+
+redis-cli -a "mypassword"
+
+mongo
+
+db.auth({user:"golemon", pwd:"qnM11:14"})
+
+
+90c791b6e305ecdd41fb0c0170546902
+
+
+del interest_m2_90c791b6e305ecdd41fb0c0170546902
+
+_see
+_topic
+_yet_see
+
+
+ab -n1000 -c50 "47.244.159.170:20009/?t_last=1554087610&t_current=1554087760&m2="

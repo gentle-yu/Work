@@ -1,0 +1,34 @@
+#!/bin/bash
+
+# http://funny.bc.test.golemon123.com/feeds/getFeedListRecommend?os=Android&offset=0&m2=90c791b6e305ecdd41fb0c0170546902&num=10&channel=funny&time_begin=1567676040492&sign=c1fcdc3348ef11d2b06a9889541781f7&network=wifi&v=1.1.6&md=PBFM00&mf=OPPO&tm=1567676939283&is_refresh=1
+
+# http://test.bc.golemon123.com/feeds/getFeedListRecommend?os=Android&offset=0&m2=90c791b6e305ecdd41fb0c0170546902&num=10&channel=wegoo&time_begin=1567676263079&sign=3df6157ac5f445209591ba3446d34e7a&network=wifi&v=2.2.13&md=PBFM00&mf=OPPO&tm=1567676993346&is_refresh=1
+# http://funny.bc.test.golemon123.com/feeds/getFeedListRecommend?os=Android&offset=0&m2=90c791b6e305ecdd41fb0c0170546902&num=10&channel=funny&time_begin=1566559872638&sign=8f271098b7c506a9d2ed5cdae268ff26&network=wifi&v=1.1.0&md=PBFM00&mf=OPPO&tm=1566559905270&is_refresh=1
+
+# http://test.bc.golemon123.com/feeds/getFeedListRecommend?os=Android&offset=0&m2=90c791b6e305ecdd41fb0c0170546902&num=10&channel=wegoo&time_begin=1566560962737&sign=7c81cced79905a44a98103741a55eba2&network=wifi&v=2.2.6&md=PBFM00&mf=OPPO&tm=1566561038535&is_refresh=1
+
+m=23
+# src=http://test.bc.golemon123.com
+ src=http://funny.bc.test.golemon123.com
+Path=/feeds/getFeedListRecommend
+m2=90c791b6e305ecdd41fb0c0170546003
+num=10
+# channel=wegoo
+ channel=funny
+sign=8f271098b7c506a9d2ed5cdae268ff26
+network=wifi
+v=1.1.0
+tm=`expr \`date +%s%N\` / 1000000`
+
+link="$src/$Path?os=Android&offset=0&m2=$m2&num=$num&channel=$channel&time_begin=$(($tm-$m))&sign=$sign&network=$network&v=$v&md=PBFM00&mf=OPPO&tm=$tm&is_refresh=1"
+
+echo $link
+
+ curl --header "Content-Type:application/json" $link>feedlist.txt
+
+ echo `date` >>feedInfo.log
+<<<<<<< HEAD
+ python3 get_feedslist.py >>feedInfo.log
+=======
+ python3 get_feedslist.py>>feedInfo.log
+>>>>>>> 42bbf7a0a893bd1f4a57c988e86acac43ea9f670

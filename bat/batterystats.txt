@@ -1,0 +1,15 @@
+***获取应用损耗电量
+
+执行步骤
+
+1）首先要初始化batterystats数据
+    adb shell dumpsys batterystats--reset
+2）上面的操作执行完毕后，拔掉手机，操作你的App，操作完成后，重新连接手机，执行下面的命令，收集Battery数据:
+    adb shell dumpsys batterystats > batterystats.txt
+3）得到这些数据后，这个时候使用我们的battery-historian来生成我们可见HTML报告:
+    python historian.py batterystats.txt > batterystats.html
+4）用google浏览器打开此文件即可
+
+(https://github.com/google/battery-historian)
+
+

@@ -1,0 +1,31 @@
+#!/bin/bash
+# http://test.bc.golemon123.com:8080/feeds/getFeedDetail?os=Android&m2=90c791b6e305ecdd41fb0c0170546902&v=2.2.6&md=PBFM00&channel=wegoo&sign=39aba89e7e76128e1f8f94c70388ff26&mf=OPPO&tm=1566562583280&network=wifi&feed_id=5d2d98096d91d
+
+# http://funny.bc.test.golemon123.com:8083/feeds/getFeedDetail?os=Android&m2=90c791b6e305ecdd41fb0c0170546902&v=1.1.0&md=PBFM00&channel=funny&sign=ffca141c462092c809427a57ca25fecd&mf=OPPO&tm=1566562617778&network=wifi&feed_id=5d5a6fdc5ddb3
+
+# src=http://test.bc.golemon123.com:8080
+ src=http://funny.bc.test.golemon123.com
+Path=/feeds/getFeedDetail
+m2=90c791b6e305ecdd41fb0c01705469023
+# v=2.2.1
+ v=1.1.0
+sign=ffca141c462092c809427a57ca25fecd
+tm=`expr \`date +%s%N\` / 1000000`
+network=wifi
+feedid=$1
+
+tm=`expr \`date +%s%N\` / 1000000`
+
+link="$src/$Path?os=Android&$m2&v=$v&md=PBFM00&channel=wegoo&sign=$sign&mf=OPPO&tm=$tm&network=$network&feed_id=$feedid"
+
+
+echo ``>>click_logs
+echo `date`>>click_logs
+
+curl $link>>click_logs
+
+echo "************************************"
+echo "*                                  *"
+echo "* click feedid=$feedid done  *"
+echo "*                                  *"
+echo "************************************"
